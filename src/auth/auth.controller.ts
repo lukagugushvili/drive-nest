@@ -41,7 +41,7 @@ export class AuthController {
   @UseGuards(JwtStrategyGuard)
   @Post('logout')
   async logout(
-    @CurrentUser() user: any,
+    @CurrentUser() user: ICurrentUser,
     @Res({ passthrough: true }) res: Response,
   ): Promise<{ message: string }> {
     await this.authService.logout(user.sub, res);
