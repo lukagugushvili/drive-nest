@@ -12,5 +12,6 @@ import { ConfigModule } from '@nestjs/config';
   ],
   controllers: [CarsController],
   providers: [CarsService],
+  exports: [CarsService],
 })
 export class CarsModule {}
