@@ -75,7 +75,7 @@ export class AuthService {
       throw new UnauthorizedException('user not found');
 
     const isValid = await bcrypt.compare(refresh_token, user.refresh_token);
-    if (!isValid) throw new UnauthorizedException('error');
+    if (!isValid) throw new UnauthorizedException();
 
     const payload = { sub: user.id, email, role: user.role };
     return this.generateTokens(payload);

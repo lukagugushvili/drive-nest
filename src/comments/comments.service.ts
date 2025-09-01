@@ -27,8 +27,6 @@ export class CommentsService {
         carId: new Types.ObjectId(carId),
       });
 
-      if (!comments) throw new BadRequestException(``);
-
       return comments.save();
     } catch (error) {
       console.error(`Error adding comment: ${error.message}`);
